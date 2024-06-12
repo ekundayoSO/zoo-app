@@ -1,16 +1,37 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useState } from "react";
+import { useParams, Link } from "react-router-dom";
 import Card from "../components/Card.jsx";
 
-const CategoryPage = ({ removeCard, removeLikes, addLikes, ...rest }) => {
+const CategoryPage = ({ removeCard, removeLikes, addLikes, ...rest  }) => {
   const { category } = useParams();
-  const categoryItems = rest[category];
+  const [searchTerm, setSearchTerm] = useState("");
+  const categoryItems = rest[category].filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Clear the search input field after submission
+    setSearchTerm("");
+  };
 
   return (
     <div className="container">
       <div className="mb-4">
-      <input type="search" name="search"/>
-      <input type="submit" value="Search"/>
+        <form form onSubmit={handleSubmit}>
+          <input
+            className="d-inline-flex focus-ring py-1 px-1 border rounded-2"
+            type="search"
+            name="search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <input
+            className="d-inline-flex focus-ring py-1 px-1 border rounded-2"
+            type="submit"
+            value="Search"
+          />
+        </form>
       </div>
       <h2>{category}</h2>
       <div className="row">
@@ -31,3 +52,4 @@ const CategoryPage = ({ removeCard, removeLikes, addLikes, ...rest }) => {
 };
 
 export default CategoryPage;
+
