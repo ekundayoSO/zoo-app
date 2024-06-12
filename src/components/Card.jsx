@@ -1,14 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "./Card.css";
 
 const Card = ({ name, likes, addLikes, removeCard, removeLikes }) => {
+  const [imageUrl, setImageUrl] = useState("");
+  const apiKey = import.meta.env.VITE_PIXABAY_API_KEY;
+
+  useEffect(() => {
+    const fetchImage = async () => {
+      try {
+        const response = await axios.get(
+          `https://pixabay.com/api/?key=${apiKey}&q=${name}`
+        );
+        const url = response.data.hits[0]?.webformatURL || "";
+        setImageUrl(url);
+      } catch (error) {
+        console.error("Error fetching image from Pixabay API", error);
+      }
+    };
+
+    fetchImage();
+  }, [name, apiKey]);
+
   return (
-    <div className="card position-relative" style={{maxHeight: 500}}>
+    <div className="card position-relative card-container">
       <img
         className="card-img-top"
-        src={`https://source.unsplash.com/200x200/?${name}`}
+        src={imageUrl}
         alt={name}
+        style={{
+          width: "300px",
+          height: "300px",
+          objectFit: "cover",
+          borderRadius: "6px",
+        }}
       />
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
@@ -20,7 +46,11 @@ const Card = ({ name, likes, addLikes, removeCard, removeLikes }) => {
           </button>
           <button className="btn">
             <p className="d-inline">{likes}</p>
-            <span className={`material-symbols-outlined broken-heart d-inline ${likes >= 0 ? "d-none" : ""}`}>
+            <span
+              className={`material-symbols-outlined broken-heart d-inline ${
+                likes >= 0 ? "d-none" : ""
+              }`}
+            >
               heart_broken
             </span>
           </button>
