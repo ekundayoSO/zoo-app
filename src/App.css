@@ -1,9 +1,14 @@
+html, body{
+  height: 100%;
+  margin: 0;
+  font-family: papyrus;
+}
+
 #root {
   background-color: #f1f5f8;
+  min-height: 100vh;
   max-width: 100%;
-  font-family: papyrus;
   margin: 0 auto;
-  /* padding: 2rem; */
   text-align: center;
 }
 
@@ -27,5 +32,6 @@
 .read-the-docs {
   color: #888;
 }
+
 
 
