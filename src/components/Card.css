@@ -1,8 +1,26 @@
+html, body{
+  background-color: #f1f5f8;
+  height: 100%;
+  margin: 0;
+  font-family: papyrus;
+}
+
 .custom-header {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f5f8;
+}
+
+
 
 
 
