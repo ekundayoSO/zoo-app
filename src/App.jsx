@@ -8,6 +8,7 @@ import ErrorPage from "./routes/ErrorPage.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import CategoryPage from "./routes/CategoryPage.jsx";
 import SinglePage from "./routes/SinglePage.jsx";
+import './App.css'
 
 function App() {
   const [zoo, setZoo] = useState({ animals, birds, insects, fishes });
