@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="container mb-5">
+    <div className="container bottom-space">
       <div className="row">
         <div className="col-md-6">
           <Link to="/animals" className="card mb-3">
