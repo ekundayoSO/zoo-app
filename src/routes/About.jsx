@@ -8,7 +8,7 @@ const About = () => {
             This application is designed to display list of cards for various
             animals, birds, insects and fishes available through animal list
             JavaScript file. Each card contains name, number of likes and
-            dislikes of each each animal as an object in the JS file.
+            dislikes of each animal as an object in the JS file.
           </p>
         </div>
         <div className="text-start">
