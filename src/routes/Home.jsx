@@ -49,10 +49,10 @@ const Home = () => {
               style={{ height: "600px", objectFit: "cover" }}
               className="card-img-top"
               src="/images/fish.jpg"
-              alt="Fishess"
+              alt="Fishes"
             />
             <div className="card-body">
-              <h5 className="card-title">Fish</h5>
+              <h5 className="card-title">Fishes</h5>
             </div>
           </Link>
         </div>
