@@ -22,7 +22,8 @@ Live page: https://ekundayoso.netlify.app
 
 ## Screenshot
 <!-- ![screenshot](../zoo_app/src/assets/screenshot.png) -->
-![screenshot](screenshot.png) kkk
+<!-- ![screenshot](screenshot.png)  -->
+<img src="Screenshot.png">
 
 
 ## Authors and acknowledgment
