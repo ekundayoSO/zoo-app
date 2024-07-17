@@ -21,7 +21,7 @@ Built with:
 Live page: https://ekundayoso.netlify.app
 
 ## Screenshot
-![screenshot](/assets/screenshot.png)
+![screenshot](../screenshot.png)
 
 ## Authors and acknowledgment
 
