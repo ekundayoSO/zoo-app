@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Card from "../components/Card.jsx";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 
 const CategoryPage = ({ removeCard, removeLikes, addLikes, ...rest  }) => {
   const { category } = useParams();
@@ -17,23 +18,27 @@ const CategoryPage = ({ removeCard, removeLikes, addLikes, ...rest  }) => {
 
   return (
     <div className="container">
-      <div className="mb-4">
+      <div className="mb-4 d-flex justify-content-between">
+        <h2>{category}</h2>
         <form form onSubmit={handleSubmit}>
-          <input
-            className="d-inline-flex focus-ring py-1 px-1 border rounded-2"
-            type="search"
-            name="search"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <input
-            className="d-inline-flex focus-ring py-1 px-1 border rounded-2"
-            type="submit"
-            value="Search"
-          />
+          <div className="input-group position-relative">
+            <input
+              className="form-control d-inline-flex py-1 px-1 border rounded-2 px-4"
+              type="text"
+              placeholder="Search..."
+              aria-label="Search"
+              aria-describedby="search-icon" 
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <div className="input-group-append">
+              <span className="position-absolute top-50 end-0 translate-middle" id="search-icon">
+                <FaMagnifyingGlass color="lightgray" />
+              </span>
+            </div>
+          </div>
         </form>
       </div>
-      <h2>{category}</h2>
       <div className="row">
         {categoryItems.map((item) => (
           <div key={item.name} className="col-4 mb-2">
