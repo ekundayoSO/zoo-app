@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import emptyImage from "../assets/empty.png";
 import "./Card.css";
 
 const Card = ({ name, likes, addLikes, removeCard, removeLikes }) => {
@@ -14,7 +15,7 @@ const Card = ({ name, likes, addLikes, removeCard, removeLikes }) => {
           `https://pixabay.com/api/?key=${apiKey}&q=${name}`
         );
         console.log(response);
-        const url = response.data.hits[0]?.webformatURL || "";
+        const url = response.data.hits[0]?.webformatURL || emptyImage;
         setImageUrl(url);
       } catch (error) {
         console.error("Error fetching image from Pixabay API", error);
