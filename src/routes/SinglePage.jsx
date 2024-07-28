@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import emptyImage from "../assets/empty.png";
 
 const SinglePage = ({ ...rest }) => {
   const [imageUrl, setImageUrl] = useState("");
@@ -29,7 +30,7 @@ const SinglePage = ({ ...rest }) => {
           const response = await axios.get(
             `https://pixabay.com/api/?key=${apiKey}&q=${data.name}`
           );
-          const imageUrl = response.data.hits[0]?.webformatURL || "";
+          const imageUrl = response.data.hits[0]?.webformatURL || emptyImage;
           setImageUrl(imageUrl);
         } catch (error) {
           console.error("Error fetching image from Pixabay API", error);
