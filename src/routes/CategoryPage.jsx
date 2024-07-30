@@ -18,7 +18,7 @@ const CategoryPage = ({ removeCard, removeLikes, addLikes, ...rest  }) => {
 
   return (
     <div className="container">
-      <div className="mb-4 d-flex justify-content-between">
+      <div className="d-flex justify-content-between">
         <h2>{category}</h2>
         <form form onSubmit={handleSubmit}>
           <div className="input-group position-relative">
