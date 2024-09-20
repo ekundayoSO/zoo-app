@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <>
-      <div className="container">
+      <div className="container vw-100">
         <div className="text-start">
           <h2>About React Zoo App</h2>
           <p>

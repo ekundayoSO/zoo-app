@@ -4,7 +4,7 @@ import "./Card.css";
 
 const Header = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-dark navbar-fixed-top mb-4">
+    <nav className="navbar navbar-expand-lg bg-dark sticky-top mb-4">
       <div className="container">
         <Link to="/" className="navbar-brand text-white">
           Zoo App
